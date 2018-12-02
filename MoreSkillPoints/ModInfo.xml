@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<xml>
+  <ModInfo>
+    <Name value="MoreSkillPoints" />
+    <Description value="Increase skill point gaining when player level is up for alpha 17" />
+    <Author value="Keiichiro UI" />
+    <Version value="1.0.0" />
+    <Website value="" />
+  </ModInfo>
+</xml>

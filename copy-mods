@@ -1,0 +1,65 @@
+#!/bin/bash
+
+set -eu
+
+base_dir="$(cd "$(dirname "$0")"; pwd)"
+
+main() {
+    if [[ $# -ne 2 ]]
+    then
+        usage
+        exit
+    fi
+
+    modname="$1"
+    src_dir="${base_dir}/${modname}"
+    if [[ ! -d "$src_dir" ]]
+    then
+        echo "Unknown mod: $modname"
+        exit 1
+    fi
+
+    sdtd_dir="$2"
+    if [[ ! -d "$sdtd_dir" ]]
+    then
+        echo "Dest dir does not exists or is not a directory: ${sdtd_dir}"
+        exit 1
+    fi
+
+    dest_dir="${sdtd_dir}/Data/Config/Mods"
+
+    mkdir -p "$dest_dir"
+    cp -vR "${src_dir}" "${dest_dir}"
+}
+
+list_mods() {
+    find "${base_dir}" -name ModInfo.xml -printf '%P\n' \
+        | sed 's!/ModInfo.xml!!' \
+        | while read modname
+    do
+        echo "${modname}"
+        echo "    $(get_mod_desc $modname)"
+    done
+}
+
+get_mod_desc() {
+    xml="${base_dir}/$1/ModInfo.xml"
+    python -c 'import sys, xml.etree.ElementTree as ET; e = ET.parse(sys.stdin).find("./ModInfo/Description").get("value"); print(e)' < "$xml"
+}
+
+usage() {
+    echo "$(basename "$0") <modname> <7dtd base dir>"
+    echo
+    echo "  Copy <modname> dir to <7dtd base dir>"
+    echo
+    echo "MacOSX Example:"
+    echo "    $0 KuiSandbox '~/Library/Application Support/Steam/steamapps/common/7 Days To Die/7DaysToDie.app'"
+    echo
+    echo "Windows Example:"
+    echo "    $0 MoreSkillPoints '/mnt/c/Program Files (x8)/Steam/steamapps/common/7 Days To Die'"
+    echo
+    echo "Mod:"
+    list_mods | sed 's/^/    /'
+}
+
+main "$@"

@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<xml>
+  <ModInfo>
+    <Name value="KuiSandbox" />
+    <Description value="My sandbox for new mod systems for alpha 17" />
+    <Author value="Keiichiro UI" />
+    <Website value="" />
+  </ModInfo>
+</xml>
