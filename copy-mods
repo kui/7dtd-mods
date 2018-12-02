@@ -26,7 +26,7 @@ main() {
         exit 1
     fi
 
-    dest_dir="${sdtd_dir}/Data/Config/Mods"
+    dest_dir="${sdtd_dir}/Mods"
 
     mkdir -p "$dest_dir"
     cp -vR "${src_dir}" "${dest_dir}"

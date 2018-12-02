@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<configs>
+    <insertAfter xpath="/lootcontainers/lootcontainer[last()]">
+        <lootcontainer id="191" count="200,300" size="8,4" sound_open="UseActions/open_fridge" sound_close="UseActions/close_fridge" loot_quality_template="baseTemplate">
+        	<item name="resourceRockSmall" count="50" />
+            <item name="resourceIronFragment" count="50" />
+	        <item name="resourceClayLump" count="50" />
+        	<item name="resourceCrushedSand" count="50" />
+        	<item name="resourcePotassiumNitratePowder" count="50" />
+	        <item name="resourceCoal" count="50" />
+            <item name="resourceScrapLead" count="50" />
+	        <item name="resourceOilShale" count="50" />
+        </lootcontainer>
+    </insertAfter>
+</configs>

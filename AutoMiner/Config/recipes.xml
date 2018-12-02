@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<configs>
+    <insertAfter xpath="/recipes/recipe[last()]"><!--
+        <recipe name="InactiveMiner">
+        	<ingredient name="resourceForgedIron" count="25"/>
+        	<ingredient name="resourceSpring" count="4"/>
+	        <ingredient name="smallEngine" count="1"/>
+	        <ingredient name="resourceMechanicalParts" count="10"/>
+        </recipe>-->
+    </insertAfter>
+</configs>

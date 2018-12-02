@@ -1,0 +1,2 @@
+InactiveMiner,blocks,Container,New,Inactive Miner,,
+minerDesc,blocks,Container,New,"Used to mine resources from the ground. It will mine the ground and be lootable after a day, it can then be refueled with 1000 Gas!",,
